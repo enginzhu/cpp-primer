@@ -1,3 +1,3 @@
 # cpp-primer
 
-### Use '-std=c++' when compiling.
+#### Use '-std=c++11' when compiling.
