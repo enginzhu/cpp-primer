@@ -1,3 +1,7 @@
 #[executable]
 
 *.out
+
+
+#[output]
+*.output
