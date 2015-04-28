@@ -5,3 +5,6 @@
 
 #[output]
 *.output
+
+#[tags]
+tags
