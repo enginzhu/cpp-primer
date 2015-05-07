@@ -9,6 +9,7 @@
 #include <memory>
 
 using std::ifstream;
+using std::ostream;
 using std::shared_ptr;
 using std::vector;
 using std::string;
@@ -29,12 +30,16 @@ private:
 
 class QueryResult
 {
+friend ostream& print(ostream&, const QueryResult&);
 public:
 	QueryResult(const string &w, shared_ptr<set<TextQuery::lineNumberType>> set,  shared_ptr<vector<string>> v):
 		word(w), numbers(set), input(v) {}
+private:
 string word;
 shared_ptr<vector<string>> input;
 shared_ptr<set<TextQuery::lineNumberType>> numbers;
 };
+
+ostream& print(ostream&, const QueryResult&);
 
 #endif
