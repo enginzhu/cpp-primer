@@ -21,6 +21,7 @@ public:
 	{
 		data = make_shared<vector<string>>(*sb.data);
 	}
+	StrBlob& operator=(const StrBlob&);
 	void push_back(const string &s)
 	{
 		data->push_back(s);
@@ -33,10 +34,17 @@ private:
 	shared_ptr<vector<string>> data;
 };
 
+StrBlob& StrBlob::operator=(const StrBlob& rhs)
+{
+	data = make_shared<vector<string>>(*rhs.data);
+	return *this;
+}
+
 int main()
 {
 	StrBlob sb1{"hi", "string"};
-	StrBlob sb2(sb1);
+//	StrBlob sb2(sb1);
+	StrBlob sb2 = sb1;
 	cout << sb1.back() << endl;
 	cout << sb2.back() << endl;
 
